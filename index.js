@@ -37,17 +37,9 @@ for (var namespace in namespaces) {
 require('./steam_language_parser');
 
 function loadProtoFiles(paths) {
-  //protobufjs 6
-  var root;
-  paths.forEach(function (path) {
-    root = ProtoBuf.loadSync(__dirname + '/protobufs/' + path, root);
-  })
-  return root;
-  /*protobufjs 4 and 5
   var builder = ProtoBuf.newBuilder();
   paths.forEach(function(path) {
     ProtoBuf.loadProtoFile(__dirname + '/protobufs/' + path, builder);
   });
   return builder.build();
-  */
 }
